@@ -5,7 +5,10 @@ import axios from "axios";
 
 function ThirdCharacter(data){
     console.log('here is the third character', data.data)
-    // const [name, setName]  = useState([]);
+    const [name, setName]  = useState([]);
+    const [height, setHeight]  = useState([]);
+    const [birthyear, setBirthyear]  = useState([]);
+
     useEffect(()=>{
         axios
             .get(`${data.data}`)
@@ -14,11 +17,20 @@ function ThirdCharacter(data){
             const name = response.data.name
             console.log(name)
             // setName(name)
+            const height = response.data.height
+            const birthyear = response.data.birth_year
+            setName(name)
+            setHeight(height)
+            setBirthyear(birthyear)
             })
     },[data])
 
     return(
-        <div></div>
+        <div>
+            <h3>Third Character: {name}</h3>
+            <p>Height: {height}</p>
+            <p>Birthyear: {birthyear}</p>
+        </div>
     );
 }
 

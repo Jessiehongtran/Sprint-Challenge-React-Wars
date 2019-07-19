@@ -24,7 +24,7 @@ function FirstCharacter(data){
 
     return(
         <div>
-            <h3>Name: {name}</h3>
+            <h3>First Character: {name}</h3>
             <p>Height: {height}</p>
             <p>Birthyear: {birthyear}</p>
         </div>
