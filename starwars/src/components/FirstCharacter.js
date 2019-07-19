@@ -4,7 +4,7 @@ import axios from "axios";
 
 function FirstCharacter(data){
     console.log('here is the first character', data.data)
-    // const [name, setName]  = useState([]);
+    const [name, setName]  = useState([]);
     useEffect(()=>{
         axios
             .get(`${data.data}`)
@@ -12,12 +12,12 @@ function FirstCharacter(data){
             console.log('new data', response)
             const name = response.data.name
             console.log(name)
-            // setName(name)
+            setName(name)
             })
     },[data])
 
     return(
-        <div>{data.data.name}</div>
+        <div>{name}</div>
     );
 }
 
