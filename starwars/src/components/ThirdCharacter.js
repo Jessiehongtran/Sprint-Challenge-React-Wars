@@ -2,10 +2,10 @@ import React from "react";
 
 
 
-function Bio(){
+function ThirdCharacter(){
     return(
         <div></div>
     );
 }
 
-export default Bio;
+export default ThirdCharacter;

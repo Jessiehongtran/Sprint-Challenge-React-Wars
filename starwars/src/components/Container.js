@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import Bio from "./CharacterBio";
-import Appearance from "./CharacterAppearance";
+import FirstCharacter from "./FirstCharacter";
+import SecondCharacter from "./SecondCharacter";
+import ThirdCharacter from "./ThirdCharacter";
 
 
 
@@ -33,7 +34,11 @@ function Container(){
 
 
     return(
-        <div></div>
+        <div>
+        <FirstCharacter firstCharacter = {firstCharacter}/>
+        <SecondCharacter secondCharacter = {secondCharacter}/> 
+        <ThirdCharacter thirdCharacter = {thirdCharacter}/>    
+        </div>
     );
 }
 

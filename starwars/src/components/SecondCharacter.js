@@ -2,10 +2,10 @@ import React from "react";
 
 
 
-function Appearance(){
+function SecondCharacter(){
     return (
         <div></div>
     )
 }
 
-export default Appearance;
+export default SecondCharacter;
