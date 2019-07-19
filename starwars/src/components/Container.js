@@ -7,9 +7,9 @@ import ThirdCharacter from "./ThirdCharacter";
 
 
 function Container(){
-    const [people, setPeople]  = useState([]);
-    // const [secondCharacter, setSecondCharacter]  = useState([]);
-    // const [thirdCharacter, setThirdCharacter] = useState([]);
+    const [firstCharacter, setFirstCharacter]  = useState([]);
+    const [secondCharacter, setSecondCharacter]  = useState([]);
+    const [thirdCharacter, setThirdCharacter] = useState([]);
 
     useEffect(()=>{
     axios
@@ -21,9 +21,9 @@ function Container(){
             const individual = characters.map(person => person)
             console.log('firstcharacterlink',individual[0])
             
-            setPeople(individual[0])
-            // setSecondCharacter(individual[1])
-            // setThirdCharacter(individual[2])
+            setFirstCharacter(individual[0])
+            setSecondCharacter(individual[1])
+            setThirdCharacter(individual[2])
         })
         .catch(err=>{
             console.log('Got some errors', err)
@@ -35,9 +35,9 @@ function Container(){
 
     return(
         <div>
-        <FirstCharacter data = {people}/>
-        <SecondCharacter data = {people}/> 
-        <ThirdCharacter data = {people}/>    
+        <FirstCharacter data = {firstCharacter}/>
+        <SecondCharacter data = {secondCharacter}/> 
+        <ThirdCharacter data = {thirdCharacter}/>    
         </div>
     );
 }

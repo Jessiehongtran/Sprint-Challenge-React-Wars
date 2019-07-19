@@ -14,10 +14,10 @@ function FirstCharacter(data){
             console.log(name)
             // setName(name)
             })
-    },[])
+    },[data])
 
     return(
-        <div></div>
+        <div>{data.data.name}</div>
     );
 }
 
