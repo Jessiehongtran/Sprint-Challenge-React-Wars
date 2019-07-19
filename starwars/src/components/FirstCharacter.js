@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {Box} from "./Style"
 
 
 function FirstCharacter(data){
@@ -23,11 +24,11 @@ function FirstCharacter(data){
     },[data])
 
     return(
-        <div>
+        <Box>
             <h3>First Character: {name}</h3>
             <p>Height: {height}</p>
             <p>Birthyear: {birthyear}</p>
-        </div>
+        </Box>
 
     );
 }

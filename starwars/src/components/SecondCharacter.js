@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {Box} from "./Style"
 
 
 
@@ -26,11 +27,11 @@ function SecondCharacter(data){
     },[data])
 
     return (
-        <div>
+        <Box>
             <h3>Second Character: {name}</h3>
             <p>Height: {height}</p>
             <p>Birthyear: {birthyear}</p>
-        </div>
+        </Box>
     )
 }
 
