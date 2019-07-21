@@ -19,24 +19,26 @@ function Container(props){
             .then(res=>
                 {console.log('what is it', res)
                 const eachCharacter = res.data
-                // setCharacter(eachCharacter)
+                setCharacter(eachCharacter)
             }
             ))
             // setCharacter(eachCharacter)
-        }
+        },[]
         )
         .catch(err=>{
             console.log('Got some errors', err)
         })
 
-    }, [character]);
+    }, []);
 
 
 
     return(
         <div>
-        <Characters 
-            data = {character}/> 
+        {/* {character.map(person =>
+        { return <Characters name = {person.data.name}/>
+        })} */}
+        <Characters data = {character}/>
         </div>
     );
 }
