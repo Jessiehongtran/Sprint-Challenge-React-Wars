@@ -1,43 +1,41 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import FirstCharacter from "./FirstCharacter";
-import SecondCharacter from "./SecondCharacter";
-import ThirdCharacter from "./ThirdCharacter";
+import Characters from "./Characters";
 
 
 
-function Container(){
-    const [firstCharacter, setFirstCharacter]  = useState([]);
-    const [secondCharacter, setSecondCharacter]  = useState([]);
-    const [thirdCharacter, setThirdCharacter] = useState([]);
+
+function Container(props){
+    const [character, setCharacter]  = useState([]);
+
 
     useEffect(()=>{
     axios
         .get(`https://swapi.co/api/films/1/`)
         .then(response =>{
-            // console.log('here', response)
-            const characters = response.data.characters.map(person => person)
-            // console.log('characters', characters)
-            const individual = characters.map(person => person)
-            console.log('firstcharacterlink',individual[0])
+            console.log('here', response)
+            response.data.characters.map(person=>
+            axios.get(`${person}`)
+            .then(res=>
+                {console.log('what is it', res)
+                const eachCharacter = res.data
+                setCharacter(eachCharacter)
+            }
+            ))
             
-            setFirstCharacter(individual[0])
-            setSecondCharacter(individual[1])
-            setThirdCharacter(individual[2])
         })
         .catch(err=>{
             console.log('Got some errors', err)
         })
 
-    }, []);
+    }, [character]);
 
 
 
     return(
         <div>
-        <FirstCharacter data = {firstCharacter}/>
-        <SecondCharacter data = {secondCharacter}/> 
-        <ThirdCharacter data = {thirdCharacter}/>    
+        <Characters 
+            data = {character}/> 
         </div>
     );
 }
