@@ -7,6 +7,7 @@ function Characters(data){
     
     return (
         <div>Name: {data.data.name} </div>
+        // <div> Gender: {data.data.gender} </div>
         
 
     )

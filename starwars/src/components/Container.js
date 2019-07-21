@@ -23,7 +23,7 @@ function Container(props){
             }
             ))
             // setCharacter(eachCharacter)
-        },[]
+        }
         )
         .catch(err=>{
             console.log('Got some errors', err)
@@ -35,9 +35,6 @@ function Container(props){
 
     return(
         <div>
-        {/* {character.map(person =>
-        { return <Characters name = {person.data.name}/>
-        })} */}
         <Characters data = {character}/>
         </div>
     );
