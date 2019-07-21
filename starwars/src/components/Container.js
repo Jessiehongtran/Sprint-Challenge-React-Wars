@@ -19,11 +19,12 @@ function Container(props){
             .then(res=>
                 {console.log('what is it', res)
                 const eachCharacter = res.data
-                setCharacter(eachCharacter)
+                // setCharacter(eachCharacter)
             }
             ))
-            
-        })
+            // setCharacter(eachCharacter)
+        }
+        )
         .catch(err=>{
             console.log('Got some errors', err)
         })
